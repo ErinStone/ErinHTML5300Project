@@ -1,93 +1,170 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Erin Stone UWPCE Projects</title>
+    <meta name="description" content="Projects I've worked on for UW PCE HTML5,CSS3 & Responsive Web Design Certificate program" />
+    <meta name="author" content="Erin Stone" />
+    
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+     <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-<html lang="en">
-<head>
- 
-  <title>Am I Right?</title>
-</head>
-<body>
-  <header>
-   
-    <h1>Am I Right?</h1>
-    <h2>A simple way to check if <i>you</i> have gotten the right answer</h2>
-   
-  </header>
+    <!-- CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/custom.css">
 
-<form name="calculator">
+    <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- scripts ___________________________________________________ -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
 
-<!-- form the keypad with buttons in a table -->
-<table >
-<tr>
-<td align="center">
-<input type="button" value="  7  " name="seven" onClick="document.calculator.ans.value+='7'">
-</td>
-<td align="center">
-<input type="button" value="  8  " name="eight" onClick="document.calculator.ans.value+='8'">
-</td>
-<td align="center">
-<input type="button" value="  9  " name="nine" onClick="document.calculator.ans.value+='9'">
-</td>
-<td align="center">
-<input type="button" value="  /  " name="divide" onClick="document.calculator.ans.value+='/'">
-</td>
-</tr>
-<tr>
-<td align="center">
-<input type="button" value="  4  " name="four" onClick="document.calculator.ans.value+='4'">
-</td>
-<td align="center">
-<input type="button" value="  5  " name="five" onClick="document.calculator.ans.value+='5'">
-</td>
-<td align="center">
-<input type="button" value="  6  " name="six" onClick="document.calculator.ans.value+='6'">
-</td>
-<td align="center">
-<input type="button" value="  *  " name="multiply" onClick="document.calculator.ans.value+='*'">
-</td>
-</tr>
-<tr>
-<td align="center">
-<input type="button" value="  1  " name="one" onClick="document.calculator.ans.value+='1'">
-</td>
-<td align="center">
-<input type="button" value="  2  " name="two" onClick="document.calculator.ans.value+='2'">
-</td>
-<td align="center">
-<input type="button" value="  3  " name="three" onClick="document.calculator.ans.value+='3'">
-</td>
-<td align="center">
-<input type="button" value="  -  " name="subtract" onClick="document.calculator.ans.value+='-'">
-</td>
-</tr>
-<tr>
-<td align="center">
-<input type="button" value="  C  " name="clear" onClick="document.calculator.ans.value=''">
-</td>
-<td align="center">
-<input type="button" value="  0  " name="zero" onClick="document.calculator.ans.value+='0'">
-</td>
-<td align="center">
-<input type="button" value="  =  " name="equal" 
-  onClick="document.calculator.ans.value=eval(document.calculator.ans.value)">
-</td>
-<td align="center">
-<input type="button" value="  +  " name="add" onClick="document.calculator.ans.value+='+'">
-</td>
-</tr>
-</table>
-<br>
-  
-  <!-- form the display to match the keypad -->
-<table >
-<tr>
-<td>
-  <label>Answer Field</label>
-<input type="text" size="25" length="25" value="" name="ans" style="background:beige;color:black;">
-</td>
-</tr>
-</table>
-</form>
-</body>
-</html>
-</body>
+  <body>
+    <div class="container">
+      <header id="banner">
+       <h1><a href="#">Erin Stone's HTML5-300 Projects</a></h1>
+        <nav class="navbar">
+          <div class="container">
+            <ul class="navbar-list">
+              <li class="navbar-item"><a class="navbar-link" href="#">About Me</a></li>
+              <li class="navbar-item">
+                <a class="navbar-link" href="#" data-popover="#codeNavPopover">Javascripts</a>
+                <div id="codeNavPopover" class="popover">
+                  <ul class="popover-list">
+                    <li class="popover-item">
+                      <a class="popover-link" href="amiright.html">Am I Right Calculator</a>
+                    </li>
+                    <li class="popover-item">
+                      <a class="popover-link" href="#typography">Annotate Images</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="navbar-item"><a class="navbar-link" href="#">Static Sites</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <section id="content">
+        <h2>Am I Right Calculator?</h2>
+        <p>This calculator will not give you the answer, but it will tell you if you are right or not</p>
+        <form>
+          <div class="row">
+            <div class="six columns">
+              <label for="op" display>Pick your operation:</label>
+              <select id="op">
+                <option value="+">ADDITION</option>
+                <option value="-">SUBTRACTION</option>
+                <option value="*">MULTIPLICATION</option>
+                <option value="/">DIVISION</option>
+              </select>
+            </div>
+            <div class="six columns">
+              <label for="terms">Number of Terms:</label>
+              <select id="terms">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+          </div>
+          <div class="row" >
+            <label for="termsBase" display style="border-bottom: 1px solid #eee;">Enter Terms</label>
+            <div id="termsBase">
+              <div class="row">
+                <div class="six columns">
+                  <input id="term0" type=number placeholder="1st term" />
+                </div>
+                <div class="six columns">
+                  <input id="term1" type=number placeholder="2nd term" />
+                </div>
+              </div>
+            </div> 
+            <div id="termsContainer">
+            </div>
+          </div>
+          <div class="row">
+            <label for="yourAns" display style="border-top: 1px solid #eee;">Enter your answer:</label>
+            <input type=number id="yourAns" />
+          </div>
+          <div class="row">
+          <input type=submit id="checkAns" class="button-primary" value="Check Your Answer" /></div>
+        </form>
+      </section>
+    </div>
+    <script>
+    $(document).ready(function() {
+      $nav = $('.navbar'),
+      $body = $('body'),
+      $window = $(window),
+      $popoverLink = $('[data-popover]'),
+      navOffsetTop = $nav.offset().top,
+      $document = $(document),
+      entityMap = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': '&quot;',
+        "'": '&#39;',
+        "/": '&#x2F;'
+      }
+      
+     $('#terms').change(function(){
+          var value = $('#terms').val();
+          var str = " ";
+          for(i = 3; i <= value; i++)
+          {
+              if (i%2 ==1)
+              {
+                //number is odd so we start a new row
+                str+="<div class=\"row\">";
+              }
+              str+= "<div class=\"six columns\"><input type=number id=\"term\" "+ i + " placeholder=\"" + i + "th term\"/></div>";
+              if(i%2 == 0)
+              {
+                //number is even so we close the row
+                str +="</div>";
+              }
+              console.log(str);
+          }
+          //check that the value was even - if it was, we close the row so no problem but if it is odd we need to close the row
+          if(value > 2 && value % 2 == 1)
+          {
+            str +="</div>";
+          } 
+         $('#termsContainer').html(str);
+          return;
+      });
+      
+      
+    function init() {
+      $popoverLink.on('click', openPopover);
+      $document.on('click', closePopover);
+    }
+      
+    function openPopover(e) {
+      e.preventDefault();
+      closePopover();
+      var popover = $($(this).data('popover'));
+      popover.toggleClass('open');
+      e.stopImmediatePropagation();
+    }
+
+    function closePopover(e) {
+      if($('.popover.open').length > 0) {
+        $('.popover').removeClass('open');
+      }
+    }
+    
+     init();
+
+}); 
+    </script>
+  </body>
 </html>
