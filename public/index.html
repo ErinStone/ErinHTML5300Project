@@ -17,8 +17,7 @@
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/custom.css">
 
-    <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    
     
     <!-- scripts ___________________________________________________ -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -45,7 +44,16 @@
                   </ul>
                 </div>
               </li>
-              <li class="navbar-item"><a class="navbar-link" href="#">Static Sites</a></li>
+              <li class="navbar-item">
+                <a class="navbar-link" href="#" data-popover="#staticNavPopover">Static Sites</a>
+                <div id="staticNavPopover" class="popover">
+                  <ul class="popover-list">
+                    <li class="popover-item">
+                      <a class="popover-link" href="http://erinstone.github.io/assignment-9/index.html ">Faith Lutheran School</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
             </ul>
           </div>
         </nav>
@@ -53,7 +61,11 @@
       <section id="content">
         <h2>Updates</h2>
         <article>
-          <h4>5/14/2015</h4>
+          <h4>5/21/2015 - <a href="amiright.html">Am I Right Calculator</a></h4>
+          <p>
+            I have updated the calculator to now tell you if your answer is correct or incorrect. 
+          </p>
+          <h4>5/14/2015 - <a href="amiright.html">Am I Right Calculator</a></h4>
           <p>I have decided that instead of using a traditional calculator input, I will instead use an html form that lets you input up to 5 numbers for the calculation. I decided to do this since it will be important to let the user see which actual numbers they entered and what the results. I felt that in order to play around with jquery and javascript, this might be just something different to do.
           </p>
           <h4>5/5/2015</h4>

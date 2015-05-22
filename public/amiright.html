@@ -17,8 +17,7 @@
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/custom.css">
 
-    <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    
     
     <!-- scripts ___________________________________________________ -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -28,7 +27,7 @@
     <div class="container">
       <header id="banner">
        <h1><a href="index.html">Erin Stone's HTML5-300 Projects</a></h1>
-        <nav class="navbar">
+         <nav class="navbar">
           <div class="container">
             <ul class="navbar-list">
               <li class="navbar-item"><a class="navbar-link" href="#">About Me</a></li>
@@ -45,7 +44,16 @@
                   </ul>
                 </div>
               </li>
-              <li class="navbar-item"><a class="navbar-link" href="#">Static Sites</a></li>
+              <li class="navbar-item">
+                <a class="navbar-link" href="#" data-popover="#staticNavPopover">Static Sites</a>
+                <div id="staticNavPopover" class="popover">
+                  <ul class="popover-list">
+                    <li class="popover-item">
+                      <a class="popover-link" href="http://erinstone.github.io/assignment-9/index.html ">Faith Lutheran School</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
             </ul>
           </div>
         </nav>
@@ -75,7 +83,7 @@
             </div>
           </div>
           <div class="row" >
-            <label for="termsBase" display style="border-bottom: 1px solid #eee;">Enter Terms</label>
+            <label for="termsBase"  style="border-bottom: 1px solid #eee;">Enter Terms</label>
             <div id="termsBase">
               <div class="row">
                 <div class="six columns">
@@ -90,11 +98,18 @@
             </div>
           </div>
           <div class="row">
-            <label for="yourAns" display style="border-top: 1px solid #eee;">Enter your answer:</label>
+            <label for="yourAns"  style="border-top: 1px solid #eee;">Enter your answer:</label>
             <input id="yourAns" name="yourAns" type=number  />
           </div>
           <div class="row">
-          <input id="checkAns" name="checkAns" class="button-primary"  type=submit value="Check Your Answer" /></div>
+          <input id="checkAns" name="checkAns" class="button-primary"  type=submit value="Check Your Answer" />
+          </div>
+          <div id="correct" class="row"  style="border-top: 1px solid #eee; display: none;">
+            <p>Your answer is correct !</p>
+          </div>
+          <div id="incorrect" class="row" style="border-top: 1px solid #eee; display: none; background-color: red;">
+            <p>Your answer is incorrect :(</p>
+          </div>
         </form>
       </section>
     </div>
@@ -177,11 +192,17 @@
 
             if(answer != fieldValue)
             {
-              alert("Your answer is not correct!");
+              //var numdigits = fieldValue.length();
+              //for(int i = numdigits; i > 0; i--)
+              //{
+                //if (
+              $("#incorrect").css("display", "initial");
+              $("#correct").css("display", "none");
             }
             else
             {
-              alert("You are correct!");
+              $("#incorrect").css("display", "none");
+              $("#correct").css("display","initial");
             }
                           
         
