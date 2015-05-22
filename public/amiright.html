@@ -27,7 +27,7 @@
   <body>
     <div class="container">
       <header id="banner">
-       <h1><a href="#">Erin Stone's HTML5-300 Projects</a></h1>
+       <h1><a href="index.html">Erin Stone's HTML5-300 Projects</a></h1>
         <nav class="navbar">
           <div class="container">
             <ul class="navbar-list">
@@ -79,10 +79,10 @@
             <div id="termsBase">
               <div class="row">
                 <div class="six columns">
-                  <input id="term0" type=number placeholder="1st term" />
+                  <input name="term0" type=number placeholder="1st term" />
                 </div>
                 <div class="six columns">
-                  <input id="term1" type=number placeholder="2nd term" />
+                  <input name="term1" type=number placeholder="2nd term" />
                 </div>
               </div>
             </div> 
@@ -91,10 +91,10 @@
           </div>
           <div class="row">
             <label for="yourAns" display style="border-top: 1px solid #eee;">Enter your answer:</label>
-            <input id="yourAns" type=number  />
+            <input id="yourAns" name="yourAns" type=number  />
           </div>
           <div class="row">
-          <input id="checkAns" class="button-primary"  type=submit value="Check Your Answer" /></div>
+          <input id="checkAns" name="checkAns" class="button-primary"  type=submit value="Check Your Answer" /></div>
         </form>
       </section>
     </div>
@@ -131,7 +131,7 @@
                 //number is odd so we start a new row
                 str+="<div class=\"row\">";
               }
-              str+= "<div class=\"six columns\"><input type=number id=\"term\" "+ i + " placeholder=\"" + i + "th term\"/></div>";
+              str+= "<div class=\"six columns\"><input type=number name=\"term\" "+ i + " placeholder=\"" + i + "th term\"/></div>";
               if(i%2 == 0)
               {
                 //number is even so we close the row
@@ -154,12 +154,39 @@
       $("#checkAns").click(function(e){
         e.preventDefault();
         var fieldValue = $.trim($('#yourAns').val());
-        if(!fieldValue)
-          {
+        var answer = 0;
+        if(fieldValue == "")
+        {
             $("#checkAns").focus();
             alert("You did not enter an answer");
             $("#yourAns").focus();
-          }
+        }
+        else
+        {
+           $('input').each(function(index,data) {
+             var strName = $(this).attr("name");
+             if(strName.indexOf("term") != -1)
+             {
+              var value = $(this).val();
+              if(value != "")
+              {
+                answer += parseInt(value);
+              }
+             }
+            });
+
+            if(answer != fieldValue)
+            {
+              alert("Your answer is not correct!");
+            }
+            else
+            {
+              alert("You are correct!");
+            }
+                          
+        
+        }
+        
        
       });
       
