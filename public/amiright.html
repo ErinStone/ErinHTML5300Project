@@ -66,7 +66,7 @@
             <div class="six columns">
               <label for="op" display>Pick your operation:</label>
               <select id="op">
-                <option value="+">ADDITION</option>
+                <option value="+" selected>ADDITION</option>
                 <option value="-">SUBTRACTION</option>
                 <option value="*">MULTIPLICATION</option>
                 <option value="/">DIVISION</option>
@@ -87,7 +87,7 @@
             <div id="termsBase">
               <div class="row">
                 <div class="six columns">
-                  <input name="term0" type=number placeholder="1st term" />
+                  <input id="zeroth" name="zeroth" type=number placeholder="1st term" />
                 </div>
                 <div class="six columns">
                   <input name="term1" type=number placeholder="2nd term" />
@@ -169,7 +169,8 @@
       $("#checkAns").click(function(e){
         e.preventDefault();
         var fieldValue = $.trim($('#yourAns').val());
-        var answer = 0;
+        var answer = parseInt($.trim($('#zeroth').val()));
+        var operation = $('#op option:selected').val();
         if(fieldValue == "")
         {
             $("#checkAns").focus();
@@ -185,9 +186,26 @@
               var value = $(this).val();
               if(value != "")
               {
-                answer += parseInt(value);
+                if(operation == "+"){
+                  answer += parseInt(value);
+                }else if (operation == "-"){
+                  answer -= parseInt(value);
+                }else if (operation == "*"){
+                  answer *= parseInt(value);
+                }else{
+                  //in this case we are dividing whichis slightly different since value cannot be zero
+                  if(parseInt(value) != 0)
+                  {
+                    answer /= parseInt(value);
+                  }
+                  else
+                  {
+                    alert("You are trying to divide by zero so sorry!");
+                    return;
+                  }
+                }
+               }
               }
-             }
             });
 
             if(answer != fieldValue)
