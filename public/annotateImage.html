@@ -1,0 +1,116 @@
+﻿<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Erin Stone UWPCE Projects</title>
+    <meta name="description" content="Projects I've worked on for UW PCE HTML5,CSS3 & Responsive Web Design Certificate program" />
+    <meta name="author" content="Erin Stone" />
+    
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+     <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    
+    
+    <!-- scripts ___________________________________________________ -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+     <header id="banner">
+       <h1><a href="index.html">Erin Stone's HTML5-300 Projects</a></h1>
+        <nav class="navbar">
+          <div class="container">
+            <ul class="navbar-list">
+              <li class="navbar-item"><a class="navbar-link" href="#">About Me</a></li>
+              <li class="navbar-item">
+                <a class="navbar-link" href="#" data-popover="#codeNavPopover">Javascripts</a>
+                <div id="codeNavPopover" class="popover">
+                  <ul class="popover-list">
+                    <li class="popover-item">
+                      <a class="popover-link" href="amiright.html">Am I Right Calculator</a>
+                    </li>
+                    <li class="popover-item">
+                      <a class="popover-link" href="annotateImage.html">Annotate Images</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+               <li class="navbar-item">
+                  <a class="navbar-link" href="#" data-popover="#appNavPopover">Applications</a>
+                  <div id="appNavPopover" class="popover">
+                     <ul class="popover-list">
+                        <li class="popover-item">
+                           <a class="popover-link" href="http://gimmeicecream.azurewebsites.net">Gimme Ice Cream</a>
+                        </li>
+                     </ul>
+                  </div>
+               </li>
+              <li class="navbar-item">
+                <a class="navbar-link" href="#" data-popover="#staticNavPopover">Static Sites</a>
+                <div id="staticNavPopover" class="popover">
+                  <ul class="popover-list">
+                    <li class="popover-item">
+                      <a class="popover-link" href="http://erinstone.github.io/assignment-9/index.html ">Faith Lutheran School</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+     <section id="content">
+    </section>
+       </div>
+     <script>
+        $(document).ready(function () {
+           $nav = $('.navbar'),
+           $body = $('body'),
+           $window = $(window),
+           $popoverLink = $('[data-popover]'),
+           navOffsetTop = $nav.offset().top,
+           $document = $(document),
+           entityMap = {
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': '&quot;',
+              "'": '&#39;',
+              "/": '&#x2F;'
+           }
+
+           function init() {
+              $popoverLink.on('click', openPopover);
+              $document.on('click', closePopover);
+           }
+
+           function openPopover(e) {
+              e.preventDefault();
+              closePopover();
+              var popover = $($(this).data('popover'));
+              popover.toggleClass('open');
+              e.stopImmediatePropagation();
+           }
+
+           function closePopover(e) {
+              if ($('.popover.open').length > 0) {
+                 $('.popover').removeClass('open');
+              }
+           }
+
+           init();
+
+        });
+    </script>
+
+</body>
+</html>

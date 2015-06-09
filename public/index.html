@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
      <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
     <!-- CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="css/normalize.css">
@@ -20,7 +20,7 @@
     
     
     <!-- scripts ___________________________________________________ -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
 
   <body>
@@ -39,11 +39,21 @@
                       <a class="popover-link" href="amiright.html">Am I Right Calculator</a>
                     </li>
                     <li class="popover-item">
-                      <a class="popover-link" href="#typography">Annotate Images</a>
+                      <a class="popover-link" href="annotateImage.html">Annotate Images</a>
                     </li>
                   </ul>
                 </div>
               </li>
+               <li class="navbar-item">
+                  <a class="navbar-link" href="#" data-popover="#appNavPopover">Applications</a>
+                  <div id="appNavPopover" class="popover">
+                     <ul class="popover-list">
+                        <li class="popover-item">
+                           <a class="popover-link" href="http://gimmeicecream.azurewebsites.net">Gimme Ice Cream</a>
+                        </li>
+                     </ul>
+                  </div>
+               </li>
               <li class="navbar-item">
                 <a class="navbar-link" href="#" data-popover="#staticNavPopover">Static Sites</a>
                 <div id="staticNavPopover" class="popover">
@@ -61,6 +71,16 @@
       <section id="content">
         <h2>Updates</h2>
         <article>
+          <h4>5/31/2015 - <a href="http://gimmeicecream.azurewebsites.net">Gimme Ice Cream</a></h4>
+           <p>I have added in a link to a basic web application developed using Microsoft ASP.NET MVC4 framework. This is an application my co-worker John McIntyre and I created to handle our group's monthly
+              ice-cream ordering. The front end uses ASP.NET MVC4 for layout/interaction. This app lives in
+              the Microsoft Azure cloud (hence the azurewebsites.net in the name). The backend uses <a href="http://azure.microsoft.com/en-us/services/storage/">Azure Storeage</a> to store user information and past order history.  To login and get a feel for it, you can use the following credentials: TestUser@test.net. Note that since the "Order Window" 
+              is currently closed, you cannot actually place an order but you can see your "history" of previous orders. This site is functional on Chrome (IE has an issue with the wave file) and includes a responsive design that allows you to order from your phone (but you won't see your history). Future features to be added include getting a list of monthly specials automatically from
+              Cold Stone Creamery (but they don't yet have an API for that). The orders that are entered during an open window get pulled together and FAXED to the local shop for preparation. That's because we work for a faxing software company.
+           </p>
+          <h4>5/28/2015 - <a  href="http://erinstone.github.io/assignment-9/index.html ">Faith Lutheran School</a></h4>
+             <p>I have added in the link to the static site I started for a local school - Faith Lutheran School. This is a work in progress since the school is still working on providing content. For this site, I did use <a href="http://getbootstrap.com">Bootstrap</a> since the customer referenced other sites they liked that used the <a href="http://getbootstrap.com">Bootstrap</a> kit.</p>
+          </h4>
           <h4>5/21/2015 - <a href="amiright.html">Am I Right Calculator</a></h4>
           <p>
             I have updated the calculator to now tell you if your answer is correct or incorrect. 
@@ -75,11 +95,10 @@
           <p>The first project is a twist on the basic calculator built using javascript. However, unlike most standard calculators this one doesn't provide you the answer. Lets say you have 3 numbers to add together: 651 + 345 + 55. In a standard calculator you input them and the calculator provides the answer. That's great if you already know how to add, but what if you are learning how to add? Lets say you "do the math" and come up with 1041. How do you know it's right? If you are my 10 yr old, you pop the numbers into the iPad calculator and it tells you the answer is 1051. Great - so now you have the right answer but maybe not an understanding of where you went wrong. This twisted calculator will instead, allow you to enter the addends, and then allow you a spot to enter your answer. If they match you are correct! If the don't match it will tell you which digits in your answer match the digits in the real answer. This give you the opportunity to fix your math mistake on your own. 
           </p>
           <p>I am hoping to use a combination of html5 forms, and css to create a modern layout/design and then of course javascript to do the actual calculations.       </p>
-          <h3>4/29/2015</h3>
+          <h4>4/29/2015</h4>
           <p> Since the work for this class is fairly open-ended, and my interest lies less in static websites and more in creating web-applications and using 3rd party APIs, I decided to create a site which will be a collection of small projects. Each project will be linked from this main page. My intention is rather basic in that I want to have a reference site to come back to at some later point when I might need to revisit the topics of the class.</p>
-
-          <p>
-            <h3>4/14/2015</h3>
+          <h4>4/14/2015</h4>
+          <p>  
             This is the home page for the site. I would replace it with real content but right now I am just figuring out how heroku and git work together.
           </p>
           
