@@ -21,12 +21,11 @@
     
     <!-- scripts ___________________________________________________ -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="javascript/signature_pad.js"></script>
   </head>
 
   <body>
     <div class="container">
-     <header id="banner">
+      <header id="banner">
        <h1><a href="index.html">Erin Stone's HTML5-300 Projects</a></h1>
         <nav class="navbar">
           <div class="container">
@@ -70,89 +69,13 @@
         </nav>
       </header>
       <section id="content">
-         <h2>Annotate Image</h2>
-         <p>Ever want to write on an image? Say a document someone sent you as a picture? By selecting the "PEN" button you can</p>
-         <div class="row">
-          <input id="pentool" name="pentool" class="button-primary"  type=button value="Pen" />
-          <input id="saveImage" name="saveImage" class="button-primary" type=button value="Save Image" />
-          </div> 
-          <div class="row">
-              <div class="six columns">
-                <div id="canvasContainer">
-
-                 <canvas id="myCanvas" width="600" height="800" class="canvas" style="">Your browser does not support the HTML5 canvas tag.
-                    <img id="basicDoc"  src="images/basic.png" alt="Basic Document">
-                 </canvas>
-                 <canvas id="myEditCanvas" width="600" height="800" class="canvas">Your browser does not support the HTML5 canvas tag.
-                 </canvas>
-                </div>
-              </div>
-           </div>
+        <h4>Why I Took This Class</h4>
+        <p>I took this certificate program so that I could better understand what our front-end developers do in order to be able to provide them with better backend options.</p>
+        <h4>Experience</h4>
+        <p>I've worked in the software industry for 17 years, primarily doing middle-tier work for large enterprise systems. In my current position, I work primarily in C++ or C# depending on the age of the product.</p>
+        <h4>Outside Interests</h4>
+        <p>I live in the southwest (yay sunshine) and enjoy the outdoors. I have 2 cats, 1 dog, 1 spouse and 2 kids.</p>
       </section>
-   </div>
-     <script>
-        $(document).ready(function () {
-           $nav = $('.navbar'),
-           $body = $('body'),
-           $window = $(window),
-           $popoverLink = $('[data-popover]'),
-           navOffsetTop = $nav.offset().top,
-           $document = $(document),
-           entityMap = {
-              "&": "&amp;",
-              "<": "&lt;",
-              ">": "&gt;",
-              '"': '&quot;',
-              "'": '&#39;',
-              "/": '&#x2F;'
-           }
-
-           function init() {
-              $popoverLink.on('click', openPopover);
-              $document.on('click', closePopover);
-           }
-
-           function openPopover(e) {
-              e.preventDefault();
-              closePopover();
-              var popover = $($(this).data('popover'));
-              popover.toggleClass('open');
-              e.stopImmediatePropagation();
-           }
-
-           function closePopover(e) {
-              if ($('.popover.open').length > 0) {
-                 $('.popover').removeClass('open');
-              }
-           }
-
-           $("#pentool").click(function(e){
-             var canvas = document.getElementById("myEditCanvas");
-             var signaturePad = new SignaturePad(canvas);
-           });
-          
-           $("#saveImage").click(function(e){
-             var canvas1 = document.getElementById("myCanvas");
-             var context1 = canvas1.getContext('2d');
-             var editCanvas = document.getElementById("myEditCanvas");
-             
-             context1.drawImage(editCanvas, 0, 0);
-             // save the merged drawings as an image
-             window.open(canvas1.toDataURL());
-           });
-          
-           init();
-
-        });
-
-       window.onload = function () {
-           var c = document.getElementById("myCanvas");
-           var ctx = c.getContext("2d");
-           var img = document.getElementById("basicDoc");
-           ctx.drawImage(img, 0,0, img.width, img.height, 0, 0, c.width, c.height);
-        }
-
-    </script>
-
-</body>
+    </div>
+  </body>
 </html>
